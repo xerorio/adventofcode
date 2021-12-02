@@ -10,7 +10,7 @@ def part_1():
 			if int(lines[i]) > int(lines[i-1]):
 				num_of_increases += 1
 		
-		print(num_of_increases)
+	print(num_of_increases)
 
 # part_1()
 # Answer: 1154
@@ -25,7 +25,7 @@ def part_2():
 		file = f.read()
 		lines = file.split('\n')
 
-		for i in range(0, len(lines)-2):
+		for i in range(len(lines)-2):
 			next_sum = (int(lines[i]))+(int(lines[i+1]))+(int(lines[i+2]))
 			list_of_sums.append(next_sum)
 
@@ -33,7 +33,7 @@ def part_2():
 			if int(list_of_sums[j]) > int(list_of_sums[j-1]):
 				num_of_increases += 1
 		
-		print(num_of_increases)
+	print(num_of_increases)
 
 # part_2()
 # Answer: 1127
