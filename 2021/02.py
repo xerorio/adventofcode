@@ -21,7 +21,6 @@ def part_1():
 	print(position[0] * position[1])
 
 # part_1()
-# Answer: 1427868
 
 
 # part 2
@@ -48,4 +47,3 @@ def part_2():
 	print(position[0] * position[1])
 
 # part_2()
-# Answer: 1568138742

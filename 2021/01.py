@@ -13,7 +13,6 @@ def part_1():
 	print(num_of_increases)
 
 # part_1()
-# Answer: 1154
 
 
 # part 2
@@ -36,4 +35,3 @@ def part_2():
 	print(num_of_increases)
 
 # part_2()
-# Answer: 1127

@@ -26,7 +26,6 @@ def part_1():
 	print(total_square_feet)
 
 # part_1()
-# Answer: 1598415
 
 
 # part 2
@@ -57,4 +56,3 @@ def part_2():
 	print(total_square_feet)
 
 # part_2()
-# Answer: 3812909
