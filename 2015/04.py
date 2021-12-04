@@ -4,29 +4,25 @@ puzzle_input = 'ckczppom'
 
 # part 1
 def part_1():
-	for i in range(10000000):
-		i_string_len = len(str(i))
-		if i_string_len < 10:
-			next_str = puzzle_input + '0000' + str(i)
-		elif i_string_len < 100:
-			next_str = puzzle_input + '000' + str(i)
-		elif i_string_len < 1000:
-			next_str = puzzle_input + '00' + str(i)
-		elif i_string_len < 10000:
-			next_str = puzzle_input + '0' + str(i)
-		elif i_string_len < 100000:
-			next_str = puzzle_input + str(i)
-
-		md5 = hashlib.md5(next_str.encode())
-		if next_str[5:] == '00000':
-			print(md5.hexdigest())
+	for i in range(1000000):
+		next_str = puzzle_input + str(i) 
+		md5_string = hashlib.md5(next_str.encode()).hexdigest()
+		
+		if md5_string[:5] == '00000':
+			print(i)
 			break
 
-part_1()
+# part_1()
 
 
 # part 2
 def part_2():
-	pass
+	for i in range(10000000):
+		next_str = puzzle_input + str(i) 
+		md5_string = hashlib.md5(next_str.encode()).hexdigest()
+		
+		if md5_string[:6] == '000000':
+			print(i)
+			break
 
 # part_2()
