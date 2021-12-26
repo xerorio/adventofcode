@@ -67,4 +67,4 @@ def part_2():
 	
 	print(sum(latest_day.values()))
 
-part_2()
+# part_2()
