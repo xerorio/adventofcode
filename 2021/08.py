@@ -54,9 +54,31 @@ def part_2():
 					next_input.append(list(''.join(sorted(m))))
 			input_signals.append(next_input)
 
+<<<<<<< HEAD
 	# check for each signal if there are letters recurring in other ones to find patterns
 
 	for signal in input_signals:
 		print(signal)
+=======
+	for signals in input_signals:
+		pattern = {
+			'top':			'',
+			'right-top':	'',
+			'right-bottom':	'',
+			'left-top':		'',
+			'left-bottom':	'',
+			'middle':		'',
+			'bottom':		''
+		}
+		for i in signals:
+			# compare 7 and 2 to find the top signal
+			if len(i) == 3:
+				for j in signals:
+					if len(j) == 2:
+						for charac in i:
+							if j.find(charac) == -1:
+								pattern['top'] = charac
+		print(pattern)
+>>>>>>> origin/main
 
 part_2()
