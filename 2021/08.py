@@ -32,6 +32,16 @@ def part_2():
 		'8': [7, 'abcdefg'],
 		'9': [6, 'abcdfg']
 	}
+	0: [6] [right-top, right-bottom, left-top, left-bottom, top, bottom]
+	1: [2] [right-top, right-bottom]
+	2: [5] [right-top, left-bottom, top, middle, bottom]
+	3: [5] [right-top, right-bottom, top, middle, bottom]
+	4: [4] [right-top, right-bottom, left-top, middle]
+	5: [5] [right-bottom, left-top, top, middle, bottom]
+	6: [6] [right-bottom, left-top, left-bottom, top, middle, bottom]
+	7: [4] [right-top, right-bottom, top]
+	8: [7] [all]
+	9: [6] [right-top, right-bottom, left-top, top, middle, bottom]
 	"""
 
 	input_signals = []
@@ -41,9 +51,12 @@ def part_2():
 			next_input = []
 			for k in next_input_r:
 				for m in k:
-					next_input.append(m)
+					next_input.append(list(''.join(sorted(m))))
 			input_signals.append(next_input)
 
-	print(input_signals)
+	# check for each signal if there are letters recurring in other ones to find patterns
+
+	for signal in input_signals:
+		print(signal)
 
 part_2()
