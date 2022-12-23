@@ -1,4 +1,5 @@
 # part 1
+
 def part_1():
     scores = {
         'A X': 4,
@@ -19,6 +20,7 @@ def part_1():
 
 
 # part 2
+
 def part_2():
     scores = {
         'A X': 3,#rocklose

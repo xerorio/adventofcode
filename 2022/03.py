@@ -42,6 +42,7 @@ def value_rucksack(rucksack):
         return letter_values[similar_letter]
 
 # part 1
+
 def part_1():
     rucksacks = []
     total = 0
@@ -55,6 +56,7 @@ def part_1():
 
 
 # part 2
+
 def part_2():
     rucksack_groups = []
     total = 0
