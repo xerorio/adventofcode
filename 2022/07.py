@@ -94,4 +94,4 @@ def part_2():
             valid_dirs.append(dirs[d])
     print(min(valid_dirs))
 
-part_2()
+# part_2()
