@@ -45,44 +45,48 @@ def part_1():
 def part_2():
     with open('08.txt', 'r') as f:
         trees = [line.strip() for line in f.readlines()]
-    # max_scenic_score = 1
-    # for x in range(len(trees[0])):
-    #     for y in range(len(trees)):
-    #         tree_height = trees[y][x]
-    #         right_counter = 1
-    #         left_counter = 1
-    #         bottom_counter = 1
-    #         top_counter = 1
-    #         # right direction
-    #         for x2 in range(x + 1, len(trees[0])):
-    #             if trees[y][x2] > tree_height: # point where you can no longer see
-    #                 break
-    #             elif trees[y][x2] == tree_height: # point where you can no longer see
-    #                 right_counter += 1
-    #                 break
-    #             right_counter += 1
-    #         # left direction
-    #         for x3 in range(0, x, -1):
-    #             if trees[y][x3] > tree_height: # point where you can no longer see
-    #                 break
-    #             elif trees[y][x3] == tree_height: # point where you can no longer see
-    #                 left_counter += 1
-    #                 break
-    #             left_counter += 1
-    #         # top direction
-    #         for y3 in range(0, y, -1):
-    #             if trees[y3][x] > tree_height: # point where you can no longer see
-    #                 break
-    #             elif trees[y3][x] == tree_height: # point where you can no longer see
-    #                 top_counter += 1
-    #                 break
-    #             top_counter += 1
-            
-    #         new_scenic_score = right_counter * left_counter * bottom_counter * top_counter
-    #         if new_scenic_score > max_scenic_score:
-    #             print(right_counter, left_counter, bottom_counter, top_counter)
-    #             max_scenic_score = new_scenic_score
-    
-    # print(max_scenic_score)
+    scenic_scores = set()
 
-# part_2()
+    # same as part 1 where we iterate away from a tree/point
+    # just add one each time we go one step away from that point in each direction
+    # multiply it all together
+
+    for x in range(1, len(trees[0]) - 1):
+        for y in range(1, len(trees) - 1):
+            right = 0
+            left = 0
+            down = 0
+            up = 0
+            tree_height = trees[y][x]
+
+            # right direction
+            for x2 in range(x + 1, len(trees[0])):
+                if tree_height < trees[y][x2]:
+                    right += 1
+                else:
+                    break
+            # left direction
+            for x3 in range(x):
+                if tree_height < trees[y][x3]:
+                    left += 1
+                else:
+                    break
+            # bottom direction
+            for y2 in range(y + 1, len(trees)):
+                if tree_height < trees[y2][x]:
+                    down += 1
+                else:
+                    break
+            # top direction
+            for y3 in range(y):
+                if tree_height < trees[y3][x]:
+                    up += 1
+                else:
+                    break
+            
+            scenic_scores.add(right * left * down * up)
+    
+    print(max(scenic_scores))
+
+part_2()
+# correct answer: 313200
