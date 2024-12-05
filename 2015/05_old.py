@@ -1,7 +1,6 @@
 # part 1
 from string import ascii_lowercase
 
-
 def part_1():
     from string import ascii_lowercase
     alphabet = list(ascii_lowercase)
